@@ -1,5 +1,5 @@
 // Components
-import { MainLayout } from "@/components/Layout";
+import { MainLayout } from "@components/Layout";
 
 const NotFoundPage = () => {
   return <MainLayout>Not Found Page</MainLayout>;

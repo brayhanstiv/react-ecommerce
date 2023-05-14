@@ -1,5 +1,6 @@
 export interface NavRoute {
   to: string;
-  title: string;
+  title?: string;
   className?: string;
+  cart?: boolean;
 }

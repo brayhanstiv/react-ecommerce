@@ -22,6 +22,8 @@
     "paths": {
       "@/*": ["src/*", "dist/*", ""],
       "@components/*": ["src/components/*"],
+      "@context/*": ["src/context/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@pages/*": ["src/pages/*"],
       "@models/*": ["src/models/*"],
       "@utils/*": ["src/utils/*"]

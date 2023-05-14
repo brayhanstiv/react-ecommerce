@@ -3,13 +3,16 @@ import { Fragment } from "react";
 
 // Components
 import { Navbar, Routes } from "@components/index";
+import ShoppingCartProvider from "@context/index";
 
 const App = () => {
   return (
-    <Fragment>
-      <Navbar />
-      <Routes />
-    </Fragment>
+    <ShoppingCartProvider>
+      <Fragment>
+        <Navbar />
+        <Routes />
+      </Fragment>
+    </ShoppingCartProvider>
   );
 };
 

@@ -51,6 +51,10 @@ const navRoutes: Array<Array<NavRoute>> = [
       to: "/sign-in",
       title: "Sign In",
     },
+    {
+      to: "/loquesea",
+      cart: true,
+    },
   ],
 ];
 

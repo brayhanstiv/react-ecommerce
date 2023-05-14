@@ -1,5 +1,5 @@
 // Components
-import { MainLayout } from "@/components/Layout";
+import { MainLayout } from "@components/Layout";
 
 const MyOrderPage = () => {
   return <MainLayout>My Order</MainLayout>;
