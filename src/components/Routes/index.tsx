@@ -18,12 +18,16 @@ const Routes = () => {
       element: <HomePage />,
     },
     {
+      path: "/my-orders",
+      element: <MyOrdersPage />,
+    },
+    {
       path: "/my-order",
       element: <MyOrderPage />,
     },
     {
-      path: "/my-orders",
-      element: <MyOrdersPage />,
+      path: "/my-orders/:id",
+      element: <MyOrderPage />,
     },
     {
       path: "/my-account",

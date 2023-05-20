@@ -2,17 +2,30 @@
 import useStateContext from "@hooks/useStateContext";
 
 //Icons
-import { PlusIcon } from "@heroicons/react/24/solid";
+import { CheckIcon, PlusIcon } from "@heroicons/react/24/solid";
 
 // Models
 import { Product } from "@models/products";
+import { MouseEvent } from "react";
 
 interface props {
   product: Product;
 }
 
 const ProductCard = ({ product }: props) => {
-  const { addToCart, setProduct } = useStateContext();
+  const {
+    state: { cart },
+    addToCart,
+    setProduct,
+  } = useStateContext();
+  const addedToCart = cart.find((item) => item.id === product.id);
+
+  const handleAddToCart = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    if (!addedToCart) {
+      addToCart(product);
+    }
+  };
 
   return (
     <div
@@ -30,9 +43,13 @@ const ProductCard = ({ product }: props) => {
         />
         <div
           className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-          onClick={() => addToCart(product)}
+          onClick={handleAddToCart}
         >
-          <PlusIcon className='w-6 h-6' />
+          {addedToCart ? (
+            <CheckIcon className='w-6 h-6' />
+          ) : (
+            <PlusIcon className='w-6 h-6' />
+          )}
         </div>
       </figure>
       <p className='flex justify-between'>

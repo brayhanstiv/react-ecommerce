@@ -5,9 +5,13 @@ import { useReducer } from "react";
 import { State } from "@models/state";
 import { Product } from "@models/products";
 
+// Actions
+import { totalPrice } from "@utils/functions";
+
 const initialState: State = {
   cart: [],
   product: <Product>{},
+  orders: [],
   menu: false,
   dropdown: false,
   shopping: false,
@@ -21,6 +25,7 @@ enum dataTypes {
   CLOSE_DETAIL = "CLOSE_DETAIL",
   ADD_TO_CART = "ADD_TO_CART",
   REMOVE_FROM_CART = "REMOVE_FROM_CART",
+  ADD_TO_ORDERS = "ADD_TO_ORDERS",
   SET_PRODUCT = "SET_PRODUCT",
 }
 
@@ -63,6 +68,20 @@ const reducer = (state: State, action: dataAction) => {
         menu: false,
         dropdown: false,
       };
+    case dataTypes.ADD_TO_ORDERS:
+      return {
+        ...state,
+        cart: [],
+        orders: [
+          ...state.orders,
+          {
+            date: "01.02.23",
+            products: state.cart,
+            totalProducts: state.cart.length,
+            totalPrice: totalPrice(state.cart),
+          },
+        ],
+      };
     case dataTypes.ADD_TO_CART:
       return {
         ...state,
@@ -102,6 +121,7 @@ const useInitialState = () => {
   const toggleDropdown = () => dispatch({ type: dataTypes.TOGGLE_DROPDOWN });
   const toggleShopping = () => dispatch({ type: dataTypes.TOGGLE_SHOPPING });
   const closeDetail = () => dispatch({ type: dataTypes.CLOSE_DETAIL });
+  const addToOrders = () => dispatch({ type: dataTypes.ADD_TO_ORDERS });
   const addToCart = (payload: Product) =>
     dispatch({ type: dataTypes.ADD_TO_CART, payload: payload });
   const removeFromCart = (payload: number) =>
@@ -114,6 +134,7 @@ const useInitialState = () => {
     toggleDropdown,
     toggleShopping,
     closeDetail,
+    addToOrders,
     addToCart,
     removeFromCart,
     setProduct,

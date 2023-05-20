@@ -1,3 +1,10 @@
+export interface Order {
+  date: string;
+  products: Array<Product>;
+  totalProducts: number;
+  totalPrice: number;
+}
+
 export interface Product {
   id: number;
   title: string;
