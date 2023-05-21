@@ -1,4 +1,4 @@
-<h1 align="center" id="title"> <img src="https://img.icons8.com/color/32/react-native.png"/> React Shop</h1>
+<h1 align="center" id="title"> <img src="https://img.icons8.com/color/32/react-native.png"/> React Ecommerce</h1>
 <p align="center">
 	<img src="https://img.shields.io/badge/Language-JavaScript-FFF719?style=flat" />
 	<a href="https://reactjs.org/" target="_blank">	
@@ -17,7 +17,7 @@
 
 
 
-![Shop main page](https://github.com/brayhanstiv/react-shop/blob/main/src/assets/scrrenshots/Captura%20de%20pantalla%202023-05-05%20224431.png)
+![Shop main page](https://github.com/brayhanstiv/react-ecommerce/blob/main/src/assets/Captura%20de%20pantalla%202023-05-21%20104713.png)
 This project is an SPA e-commerce, it receives the products from an API. This project has many views like: Login, create account, home account, new password, orders, password recovery and email send. You can see the project [here](https://eclectic-sprite-d9692e.netlify.app) deployed on netlify.
 ## Environment Configuration
 Simple npm v9.6.0 environment, this project is minify using **Vite**. 
@@ -48,6 +48,5 @@ You can see more solutions for this problem [here](https://create-react-app.dev/
 Making this project I learn to use React JS to make a SPA, creating routes using react-router-dom. How to work with an API that gives you items for an e-commerce, also how to make a **cart** that will pass their items to a checkout page for the payment.
 I learn how to follow a design made by a designer, following some real work flow.
 
-![alt text](https://github.com/brayhanstiv/react-shop/blob/main/src/assets/scrrenshots/Captura%20de%20pantalla%202023-05-05%20224540.png)
-![alt text](https://github.com/brayhanstiv/react-shop/blob/main/src/assets/scrrenshots/Captura%20de%20pantalla%202023-05-05%20224700.png)
-![alt text](https://github.com/brayhanstiv/react-shop/blob/main/src/assets/scrrenshots/Captura%20de%20pantalla%202023-05-05%20224731.png)
+![alt text](https://github.com/brayhanstiv/react-ecommerce/blob/main/src/assets/Captura%20de%20pantalla%202023-05-21%20104729.png)
+![alt text](https://github.com/brayhanstiv/react-ecommerce/blob/main/src/assets/Captura%20de%20pantalla%202023-05-21%20104754.png)
