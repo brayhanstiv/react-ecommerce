@@ -3,8 +3,11 @@ import { Order, Product } from "./products";
 
 export interface State {
   cart: Array<Product>;
+  items: Array<Product>;
+  filteredItems: Array<Product>;
   orders: Array<Order>;
   product: Product;
+  search: string;
   menu: boolean;
   dropdown: boolean;
   shopping: boolean;
@@ -13,6 +16,8 @@ export interface State {
 
 export interface ContextItfz {
   state: State;
+  setItems: (payload: Product[]) => void;
+  setFilteredItems: (payload: Product[]) => void;
   toggleMenu: () => void;
   toggleDropdown: () => void;
   toggleShopping: () => void;
@@ -21,4 +26,5 @@ export interface ContextItfz {
   addToCart: (payload: Product) => void;
   removeFromCart: (payload: number) => void;
   setProduct: (payload: Product) => void;
+  setSearch: (payload: string) => void;
 }

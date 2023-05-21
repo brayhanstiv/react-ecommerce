@@ -18,6 +18,10 @@ const Routes = () => {
       element: <HomePage />,
     },
     {
+      path: "/:id",
+      element: <HomePage />,
+    },
+    {
       path: "/my-orders",
       element: <MyOrdersPage />,
     },

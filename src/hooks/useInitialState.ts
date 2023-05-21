@@ -10,8 +10,11 @@ import { totalPrice } from "@utils/functions";
 
 const initialState: State = {
   cart: [],
+  items: [],
+  filteredItems: [],
   product: <Product>{},
   orders: [],
+  search: "",
   menu: false,
   dropdown: false,
   shopping: false,
@@ -19,6 +22,8 @@ const initialState: State = {
 };
 
 enum dataTypes {
+  SET_ITEMS = "SET_ITEMS",
+  SET_FILTERED_ITEMS = "SET_FILTERED_ITEMS",
   TOGGLE_MENU = "TOGGLE_MENU",
   TOGGLE_DROPDOWN = "TOGGLE_DROPDOWN",
   TOGGLE_SHOPPING = "TOGGLE_SHOPPING",
@@ -27,6 +32,7 @@ enum dataTypes {
   REMOVE_FROM_CART = "REMOVE_FROM_CART",
   ADD_TO_ORDERS = "ADD_TO_ORDERS",
   SET_PRODUCT = "SET_PRODUCT",
+  SET_SEARCH = "SET_SEARCH",
 }
 
 interface dataAction {
@@ -36,6 +42,21 @@ interface dataAction {
 
 const reducer = (state: State, action: dataAction) => {
   switch (action.type) {
+    case dataTypes.SET_ITEMS:
+      return {
+        ...state,
+        items: action.payload,
+      };
+    case dataTypes.SET_FILTERED_ITEMS:
+      return {
+        ...state,
+        filteredItems: action.payload,
+      };
+    case dataTypes.SET_SEARCH:
+      return {
+        ...state,
+        search: action.payload,
+      };
     case dataTypes.TOGGLE_MENU:
       return {
         ...state,
@@ -72,6 +93,7 @@ const reducer = (state: State, action: dataAction) => {
       return {
         ...state,
         cart: [],
+        search: "",
         orders: [
           ...state.orders,
           {
@@ -128,6 +150,12 @@ const useInitialState = () => {
     dispatch({ type: dataTypes.REMOVE_FROM_CART, payload: payload });
   const setProduct = (payload: Product) =>
     dispatch({ type: dataTypes.SET_PRODUCT, payload: payload });
+  const setItems = (payload: Product[]) =>
+    dispatch({ type: dataTypes.SET_ITEMS, payload: payload });
+  const setFilteredItems = (payload: Product[]) =>
+    dispatch({ type: dataTypes.SET_FILTERED_ITEMS, payload: payload });
+  const setSearch = (payload: string) =>
+    dispatch({ type: dataTypes.SET_SEARCH, payload: payload });
   return {
     state,
     toggleMenu,
@@ -138,6 +166,9 @@ const useInitialState = () => {
     addToCart,
     removeFromCart,
     setProduct,
+    setItems,
+    setFilteredItems,
+    setSearch,
   };
 };
 

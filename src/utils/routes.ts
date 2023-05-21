@@ -13,23 +13,23 @@ const navRoutes: Array<Array<NavRoute>> = [
       title: "All",
     },
     {
-      to: "/clothes",
+      to: "/1",
       title: "Clothes",
     },
     {
-      to: "/electronics",
+      to: "/2",
       title: "Electronics",
     },
     {
-      to: "/furnitures",
+      to: "/3",
       title: "Furnitures",
     },
     {
-      to: "/toys",
+      to: "/4",
       title: "Toys",
     },
     {
-      to: "/others",
+      to: "/5",
       title: "Others",
     },
   ],
